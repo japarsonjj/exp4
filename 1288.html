@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Login & Signup</title>
+    <!-- Google Fonts for a stylish look (optional, but recommended) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Resets & Body Styling */
+        body {
+            margin: 0; /* Remove default body margin */
+            font-family: 'Roboto', sans-serif; /* Using Google Font */
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        /* Horizontal Navigation Bar */
+        .navbar {
+            position: fixed; /* Make the navigation bar stay at the top */
+            top: 0; /* Position at the top */
+            width: 100%; /* Full width */
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            padding: 15px 20px;
+            display: flex; /* Use flexbox for horizontal arrangement */
+            align-items: center; /* Vertically align items */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            z-index: 1000; /* Ensure it stays on top of other content */
+        }
+
+        .navbar .logo img {
+            height: 40px; /* Adjust logo size */
+            margin-right: 15px;
+        }
+
+        .navbar .title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            flex-grow: 1; /* Allow the title to take up available space */
+        }
+
+        .navbar ul {
+            list-style: none; /* Remove bullet points from list */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Arrange list items horizontally */
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none; /* Remove underline from links */
+            color: #555;
+            font-weight: 400;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        .navbar ul li a:hover {
+            background-color: #e0e0e0; /* Background color on hover */
+            color: #007bff; /* Text color on hover */
+        }
+
+        /* Landing Page Background */
+        .landing-page {
+            background-image: url('background.jpg'); /* Replace with your background image path */
+            background-size: cover; /* Cover the entire area */
+            background-position: center; /* Center the image */
+            background-attachment: fixed; /* Fixed background during scroll */
+            height: 100vh; /* Full viewport height */
+            display: flex; /* Use flexbox to center the login form */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            padding-top: 80px; /* Adjust for fixed navbar height */
+        }
+
+        /* Login Form */
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white background */
+            padding: 40px;
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Stronger box shadow */
+            width: 350px;
+            max-width: 90%; /* Responsive width */
+            text-align: center;
+            position: relative; /* Positioned relative to the parent (.landing-page) */
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block; /* Place label on its own line */
+            margin-bottom: 8px;
+            font-weight: 400;
+            color: #555;
+        }
+
+        .input-group input[type="text"],
+        .input-group input[type="password"] {
+            width: calc(100% - 20px); /* Adjust width for padding */
+            padding: 12px 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px; /* Slightly rounded input fields */
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+        }
+
+        .input-group input[type="text"]:focus,
+        .input-group input[type="password"]:focus {
+            border-color: #007bff; /* Highlight border on focus */
+            outline: none; /* Remove default outline */
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Subtle glow on focus */
+        }
+
+        .btn-login {
+            background-color: #007bff; /* Primary button color */
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover and active states */
+        }
+
+        .btn-login:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            transform: translateY(-2px); /* Lift button slightly on hover */
+        }
+
+        .btn-login:active {
+            background-color: #004085; /* Even darker on click */
+            transform: translateY(0); /* Reset lift on click */
+        }
+
+        .signup-link {
+            margin-top: 25px;
+            font-size: 15px;
+            color: #666;
+        }
+
+        .signup-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Horizontal Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="C:\Users\urk23cs1288\Downloads\login-button-click-app-icon-ui-ux-user-interface-authorization-hand-pressing-button-web-or-mobile-applications-isolated-illustration-vector.jpg" alt="Company Logo">
+        </div>
+        <div class="title">My Login & Signup page</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Landing Page Background Div -->
+    <div class="landing-page">
+
+        <!-- Login Form -->
+        <div class="login-container">
+            <h2>Welcome Back!</h2>
+            <form class="login-form">
+                <div class="input-group">
+                    <label for="username">Username/Email</label>
+                    <input type="text" id="username" placeholder="Enter your username or email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+                <div class="signup-link">
+                    Don't have an account? <a href="#">Sign Up</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
